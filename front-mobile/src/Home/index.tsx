@@ -1,17 +1,22 @@
 import { useFonts, OpenSans_400Regular, OpenSans_700Bold } from '@expo-google-fonts/open-sans';
+import { useNavigation } from '@react-navigation/native';
 import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+import Header from '../Header';
 
 function Home() {
+  const navigation = useNavigation();
+  
   const handleOnPress = () => {
-
+    navigation.navigate('Orders');
   }
  
   return (
     <>
+        <Header />
         <View style={styles.container}>
             <Image source={require('../assets/deliveryman.png')} />
             <Text style={styles.title}>
